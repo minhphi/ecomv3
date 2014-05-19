@@ -89,9 +89,6 @@
     <Compile Include="EntityFramework\Model\Product.cs">
       <DependentUpon>CMSDatacontext.tt</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\Model\sysdiagram.cs">
-      <DependentUpon>CMSDatacontext.tt</DependentUpon>
-    </Compile>
     <Compile Include="IDao.cs" />
     <Compile Include="IDaoFactory.cs" />
     <Compile Include="IPageDao.cs" />

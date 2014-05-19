@@ -12,7 +12,6 @@
           <EntitySet Name="Invoice" EntityType="LaminhCMSModel.Store.Invoice" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="InvoiceProduct" EntityType="LaminhCMSModel.Store.InvoiceProduct" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Product" EntityType="LaminhCMSModel.Store.Product" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="LaminhCMSModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_CMS_Page_UserControl_CMS_Page" Association="LaminhCMSModel.Store.FK_CMS_Page_UserControl_CMS_Page">
             <End Role="CMS_Page" EntitySet="CMS_Page" />
             <End Role="CMS_Page_UserControl" EntitySet="CMS_Page_UserControl" />
@@ -102,16 +101,6 @@
           <Property Name="Price" Type="float" />
           <Property Name="CreateDate" Type="datetime" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <Association Name="FK_CMS_Page_UserControl_CMS_Page">
           <End Role="CMS_Page" Type="LaminhCMSModel.Store.CMS_Page" Multiplicity="0..1" />
           <End Role="CMS_Page_UserControl" Type="LaminhCMSModel.Store.CMS_Page_UserControl" Multiplicity="*" />
@@ -167,7 +156,6 @@
         <EntityContainer Name="LaminhCMSEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CMS_Page_UserControl" EntityType="LaminhCMSModel.CMS_Page_UserControl" />
           <EntitySet Name="CMS_UserControl" EntityType="LaminhCMSModel.CMS_UserControl" />
-          <EntitySet Name="sysdiagrams" EntityType="LaminhCMSModel.sysdiagram" />
           <AssociationSet Name="FK_CMS_Page_UserControl_CMS_UserControl" Association="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_UserControl">
             <End Role="CMS_UserControl" EntitySet="CMS_UserControl" />
             <End Role="CMS_Page_UserControl" EntitySet="CMS_Page_UserControl" />
@@ -214,16 +202,6 @@
           <Property Name="Visible" Type="Boolean" />
           <Property Name="Is_Delete" Type="Boolean" />
           <NavigationProperty Name="CMS_Page_UserControl" Relationship="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_UserControl" FromRole="CMS_UserControl" ToRole="CMS_Page_UserControl" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <Association Name="FK_CMS_Page_UserControl_CMS_UserControl">
           <End Role="CMS_UserControl" Type="LaminhCMSModel.CMS_UserControl" Multiplicity="0..1" />
@@ -355,17 +333,6 @@
                 <ScalarProperty Name="Create_By" ColumnName="Create_By" />
                 <ScalarProperty Name="Visible" ColumnName="Visible" />
                 <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="LaminhCMSModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

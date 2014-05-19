@@ -15,11 +15,227 @@ namespace Laminh.CMS.WinForm.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CmsPage", Namespace="http://schemas.datacontract.org/2004/07/BusinessObject")]
+    [System.SerializableAttribute()]
+    public partial class CmsPage : Laminh.CMS.WinForm.ServiceReference1.BusinessObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CacheTimeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CreateByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime CreateDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsDeleteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MasterFileSourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PageDescribeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PageIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PageLanguageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PageMetadataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PageParentIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PageTitleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PageViewField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool VisibleField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CacheTime {
+            get {
+                return this.CacheTimeField;
+            }
+            set {
+                if ((this.CacheTimeField.Equals(value) != true)) {
+                    this.CacheTimeField = value;
+                    this.RaisePropertyChanged("CacheTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CreateBy {
+            get {
+                return this.CreateByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreateByField, value) != true)) {
+                    this.CreateByField = value;
+                    this.RaisePropertyChanged("CreateBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreateDate {
+            get {
+                return this.CreateDateField;
+            }
+            set {
+                if ((this.CreateDateField.Equals(value) != true)) {
+                    this.CreateDateField = value;
+                    this.RaisePropertyChanged("CreateDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsDelete {
+            get {
+                return this.IsDeleteField;
+            }
+            set {
+                if ((this.IsDeleteField.Equals(value) != true)) {
+                    this.IsDeleteField = value;
+                    this.RaisePropertyChanged("IsDelete");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MasterFileSource {
+            get {
+                return this.MasterFileSourceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MasterFileSourceField, value) != true)) {
+                    this.MasterFileSourceField = value;
+                    this.RaisePropertyChanged("MasterFileSource");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PageDescribe {
+            get {
+                return this.PageDescribeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PageDescribeField, value) != true)) {
+                    this.PageDescribeField = value;
+                    this.RaisePropertyChanged("PageDescribe");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageId {
+            get {
+                return this.PageIdField;
+            }
+            set {
+                if ((this.PageIdField.Equals(value) != true)) {
+                    this.PageIdField = value;
+                    this.RaisePropertyChanged("PageId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PageLanguage {
+            get {
+                return this.PageLanguageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PageLanguageField, value) != true)) {
+                    this.PageLanguageField = value;
+                    this.RaisePropertyChanged("PageLanguage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PageMetadata {
+            get {
+                return this.PageMetadataField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PageMetadataField, value) != true)) {
+                    this.PageMetadataField = value;
+                    this.RaisePropertyChanged("PageMetadata");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PageParentId {
+            get {
+                return this.PageParentIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PageParentIdField, value) != true)) {
+                    this.PageParentIdField = value;
+                    this.RaisePropertyChanged("PageParentId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PageTitle {
+            get {
+                return this.PageTitleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PageTitleField, value) != true)) {
+                    this.PageTitleField = value;
+                    this.RaisePropertyChanged("PageTitle");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageView {
+            get {
+                return this.PageViewField;
+            }
+            set {
+                if ((this.PageViewField.Equals(value) != true)) {
+                    this.PageViewField = value;
+                    this.RaisePropertyChanged("PageView");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Visible {
+            get {
+                return this.VisibleField;
+            }
+            set {
+                if ((this.VisibleField.Equals(value) != true)) {
+                    this.VisibleField = value;
+                    this.RaisePropertyChanged("Visible");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="BusinessObject", Namespace="http://schemas.datacontract.org/2004/07/BusinessObject")]
     [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Laminh.CMS.WinForm.ServiceReference1.Product))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Laminh.CMS.WinForm.ServiceReference1.InvoiceProduct))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(Laminh.CMS.WinForm.ServiceReference1.Invoice))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Laminh.CMS.WinForm.ServiceReference1.Product))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Laminh.CMS.WinForm.ServiceReference1.CmsPage))]
     public partial class BusinessObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -41,6 +257,125 @@ namespace Laminh.CMS.WinForm.ServiceReference1 {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/BusinessObject")]
+    [System.SerializableAttribute()]
+    public partial class Product : Laminh.CMS.WinForm.ServiceReference1.BusinessObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> CreateDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Laminh.CMS.WinForm.ServiceReference1.InvoiceProduct[] InvoiceProductsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShortDescField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> CreateDate {
+            get {
+                return this.CreateDateField;
+            }
+            set {
+                if ((this.CreateDateField.Equals(value) != true)) {
+                    this.CreateDateField = value;
+                    this.RaisePropertyChanged("CreateDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Image {
+            get {
+                return this.ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
+                    this.ImageField = value;
+                    this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Laminh.CMS.WinForm.ServiceReference1.InvoiceProduct[] InvoiceProducts {
+            get {
+                return this.InvoiceProductsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceProductsField, value) != true)) {
+                    this.InvoiceProductsField = value;
+                    this.RaisePropertyChanged("InvoiceProducts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShortDesc {
+            get {
+                return this.ShortDescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShortDescField, value) != true)) {
+                    this.ShortDescField = value;
+                    this.RaisePropertyChanged("ShortDesc");
+                }
             }
         }
     }
@@ -267,128 +602,30 @@ namespace Laminh.CMS.WinForm.ServiceReference1 {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/BusinessObject")]
-    [System.SerializableAttribute()]
-    public partial class Product : Laminh.CMS.WinForm.ServiceReference1.BusinessObject {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> CreateDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ImageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private Laminh.CMS.WinForm.ServiceReference1.InvoiceProduct[] InvoiceProductsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> PriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ShortDescField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> CreateDate {
-            get {
-                return this.CreateDateField;
-            }
-            set {
-                if ((this.CreateDateField.Equals(value) != true)) {
-                    this.CreateDateField = value;
-                    this.RaisePropertyChanged("CreateDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Image {
-            get {
-                return this.ImageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
-                    this.ImageField = value;
-                    this.RaisePropertyChanged("Image");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public Laminh.CMS.WinForm.ServiceReference1.InvoiceProduct[] InvoiceProducts {
-            get {
-                return this.InvoiceProductsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InvoiceProductsField, value) != true)) {
-                    this.InvoiceProductsField = value;
-                    this.RaisePropertyChanged("InvoiceProducts");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> Price {
-            get {
-                return this.PriceField;
-            }
-            set {
-                if ((this.PriceField.Equals(value) != true)) {
-                    this.PriceField = value;
-                    this.RaisePropertyChanged("Price");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ShortDesc {
-            get {
-                return this.ShortDescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ShortDescField, value) != true)) {
-                    this.ShortDescField = value;
-                    this.RaisePropertyChanged("ShortDesc");
-                }
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IActionService")]
     public interface IActionService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActionService/GetAllPage", ReplyAction="http://tempuri.org/IActionService/GetAllPageResponse")]
+        Laminh.CMS.WinForm.ServiceReference1.CmsPage[] GetAllPage();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActionService/GetPage", ReplyAction="http://tempuri.org/IActionService/GetPageResponse")]
+        Laminh.CMS.WinForm.ServiceReference1.CmsPage GetPage(int pageId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActionService/GetListPage", ReplyAction="http://tempuri.org/IActionService/GetListPageResponse")]
+        Laminh.CMS.WinForm.ServiceReference1.CmsPage[] GetListPage(int[] pageIds);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActionService/SetPage", ReplyAction="http://tempuri.org/IActionService/SetPageResponse")]
+        Laminh.CMS.WinForm.ServiceReference1.CmsPage SetPage(Laminh.CMS.WinForm.ServiceReference1.CmsPage cmsPage);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActionService/UpdatePage", ReplyAction="http://tempuri.org/IActionService/UpdatePageResponse")]
+        Laminh.CMS.WinForm.ServiceReference1.CmsPage UpdatePage(Laminh.CMS.WinForm.ServiceReference1.CmsPage page);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActionService/DeletePage", ReplyAction="http://tempuri.org/IActionService/DeletePageResponse")]
+        void DeletePage(Laminh.CMS.WinForm.ServiceReference1.CmsPage page);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActionService/DeletePageById", ReplyAction="http://tempuri.org/IActionService/DeletePageByIdResponse")]
+        void DeletePageById(int pageId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IActionService/Test", ReplyAction="http://tempuri.org/IActionService/TestResponse")]
         string Test();
@@ -431,6 +668,34 @@ namespace Laminh.CMS.WinForm.ServiceReference1 {
         
         public ActionServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public Laminh.CMS.WinForm.ServiceReference1.CmsPage[] GetAllPage() {
+            return base.Channel.GetAllPage();
+        }
+        
+        public Laminh.CMS.WinForm.ServiceReference1.CmsPage GetPage(int pageId) {
+            return base.Channel.GetPage(pageId);
+        }
+        
+        public Laminh.CMS.WinForm.ServiceReference1.CmsPage[] GetListPage(int[] pageIds) {
+            return base.Channel.GetListPage(pageIds);
+        }
+        
+        public Laminh.CMS.WinForm.ServiceReference1.CmsPage SetPage(Laminh.CMS.WinForm.ServiceReference1.CmsPage cmsPage) {
+            return base.Channel.SetPage(cmsPage);
+        }
+        
+        public Laminh.CMS.WinForm.ServiceReference1.CmsPage UpdatePage(Laminh.CMS.WinForm.ServiceReference1.CmsPage page) {
+            return base.Channel.UpdatePage(page);
+        }
+        
+        public void DeletePage(Laminh.CMS.WinForm.ServiceReference1.CmsPage page) {
+            base.Channel.DeletePage(page);
+        }
+        
+        public void DeletePageById(int pageId) {
+            base.Channel.DeletePageById(pageId);
         }
         
         public string Test() {

@@ -66,10 +66,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionService.svc.cs">
-      <DependentUpon>ActionService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IActionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +87,10 @@
     <ProjectReference Include="..\DataObjects\DataObjects.csproj">
       <Project>{33639ee2-bddd-4f69-8533-b5fa02a57e40}</Project>
       <Name>DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{d21de022-1a51-4ee2-b560-1c308245ec5a}</Project>
+      <Name>Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

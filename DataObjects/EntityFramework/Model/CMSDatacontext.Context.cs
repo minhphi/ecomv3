@@ -19,12 +19,11 @@ namespace DataObjects.EntityFramework.Model
             : base("name=LaminhCMSEntities")
         {
         }
-
         public LaminhCMSEntities(string conn)
             : base(conn)
         {
-
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -32,7 +31,6 @@ namespace DataObjects.EntityFramework.Model
 
         public DbSet<CMS_Page_UserControl> CMS_Page_UserControl { get; set; }
         public DbSet<CMS_UserControl> CMS_UserControl { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<CMS_Page> CMS_Page { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<InvoiceProduct> InvoiceProducts { get; set; }

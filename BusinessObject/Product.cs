@@ -55,5 +55,10 @@ namespace BusinessObject
             this.CreateDate = createDate;
             this.InvoiceProducts = invoiceProducts;
         }
+
+        public bool ShouldSerializeImage()
+        {
+            return Image != null;
+        }
     }
 }

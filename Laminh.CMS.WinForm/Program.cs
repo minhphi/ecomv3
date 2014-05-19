@@ -15,7 +15,8 @@ namespace Laminh.CMS.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new ProductForm());
+            //Application.Run(new Main());
         }
     }
 }

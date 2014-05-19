@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Web;
 using DataObjects.EntityFramework.Model;
@@ -31,12 +32,25 @@ namespace DataObjects.EntityFramework
                 }
                 else
                 {
-                    context = new LaminhCMSEntities(_connectionString);
+                    //context = new LaminhCMSEntities(_connectionString);
+                    context = new LaminhCMSEntities();
                     HttpContext.Current.Items[DATACONTEXTSTOREKEY] = context;
                 }
-                return context;
             }
-            return null;
+            else
+            {
+                if (CallContext.GetData(DATACONTEXTSTOREKEY) == null)
+                {
+                    //context = new LaminhCMSEntities(_connectionString);
+                    context = new LaminhCMSEntities();
+                    CallContext.SetData(DATACONTEXTSTOREKEY, context);
+                }
+                else
+                {
+                    context = (LaminhCMSEntities)CallContext.GetData(DATACONTEXTSTOREKEY);
+                }
+            }
+            return context;
         }
     }
 }

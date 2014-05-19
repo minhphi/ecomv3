@@ -8,6 +8,11 @@ namespace DataObjects.EntityFramework.Implement
 {
     public abstract class EntityDaoBase
     {
-        protected LaminhCMSEntities Context { get { return DataObjectFactory.CreateDataContext(); } }
+        protected LaminhCMSEntities _context;
+        protected LaminhCMSEntities Context
+        {
+            //get { return _context ?? (_context = DataObjectFactory.CreateDataContext()); }
+            get { return DataObjectFactory.CreateDataContext(); }
+        }
     }
 }

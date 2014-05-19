@@ -1,61 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsp:Policy wsu:Id="MetadataExchangeHttpBinding_IActionService_policy">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <wsaw:UsingAddressing />
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsdl:import namespace="http://tempuri.org/" location="http://localhost/ecomhost/ActionService.svc?wsdl" />
-  <wsdl:types />
-  <wsdl:binding name="MetadataExchangeHttpBinding_IActionService" type="i0:IActionService">
-    <wsp:PolicyReference URI="#MetadataExchangeHttpBinding_IActionService_policy" />
-    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ActionService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://localhost:5861/ActionService.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:5861/ActionService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:5861/ActionService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:5861/ActionService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BusinessObject" />
+      <xsd:import schemaLocation="http://localhost:5861/ActionService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IActionService_GetAllPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPage" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetAllPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPage" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetListPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListPage" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetListPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetPage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetPage" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_SetPage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_UpdatePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePage" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_UpdatePage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_DeletePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePage" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_DeletePage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_DeletePageById_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePageById" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_DeletePageById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePageByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetProductXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductXml" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetProductXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetProductJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductJson" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetProductJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_GetProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_InsertProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProduct" />
+  </wsdl:message>
+  <wsdl:message name="IActionService_InsertProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertProductResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IActionService">
+    <wsdl:operation name="GetAllPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetAllPage" message="tns:IActionService_GetAllPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetAllPageResponse" message="tns:IActionService_GetAllPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetPage" message="tns:IActionService_GetPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetPageResponse" message="tns:IActionService_GetPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetListPage" message="tns:IActionService_GetListPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetListPageResponse" message="tns:IActionService_GetListPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/SetPage" message="tns:IActionService_SetPage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/SetPageResponse" message="tns:IActionService_SetPage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/UpdatePage" message="tns:IActionService_UpdatePage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/UpdatePageResponse" message="tns:IActionService_UpdatePage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/DeletePage" message="tns:IActionService_DeletePage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/DeletePageResponse" message="tns:IActionService_DeletePage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePageById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/DeletePageById" message="tns:IActionService_DeletePageById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/DeletePageByIdResponse" message="tns:IActionService_DeletePageById_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Test">
-      <soap12:operation soapAction="http://tempuri.org/IActionService/Test" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/Test" message="tns:IActionService_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/TestResponse" message="tns:IActionService_Test_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetProductXml">
-      <soap12:operation soapAction="http://tempuri.org/IActionService/GetProductXml" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetProductXml" message="tns:IActionService_GetProductXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetProductXmlResponse" message="tns:IActionService_GetProductXml_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetProductJson">
-      <soap12:operation soapAction="http://tempuri.org/IActionService/GetProductJson" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetProductJson" message="tns:IActionService_GetProductJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetProductJsonResponse" message="tns:IActionService_GetProductJson_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetProduct">
-      <soap12:operation soapAction="http://tempuri.org/IActionService/GetProduct" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/GetProduct" message="tns:IActionService_GetProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/GetProductResponse" message="tns:IActionService_GetProduct_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="InsertProduct">
-      <soap12:operation soapAction="http://tempuri.org/IActionService/InsertProduct" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
+      <wsdl:input wsaw:Action="http://tempuri.org/IActionService/InsertProduct" message="tns:IActionService_InsertProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IActionService/InsertProductResponse" message="tns:IActionService_InsertProduct_OutputMessage" />
     </wsdl:operation>
-  </wsdl:binding>
+  </wsdl:portType>
+  <wsdl:service name="ActionService">
+    <wsdl:port name="MetadataExchangeHttpBinding_IActionService" binding="i0:MetadataExchangeHttpBinding_IActionService">
+      <soap12:address location="http://localhost:5861/ActionService.svc/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:5861/ActionService.svc/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
 </wsdl:definitions>

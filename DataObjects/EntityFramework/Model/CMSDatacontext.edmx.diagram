@@ -7,7 +7,6 @@
       <Diagram DiagramId="4d2c36aedc504e45b51d817c10c7dc94" Name="Diagram1">
         <EntityTypeShape EntityType="LaminhCMSModel.CMS_Page_UserControl" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LaminhCMSModel.CMS_UserControl" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaminhCMSModel.sysdiagram" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_UserControl" ManuallyRouted="false" />
         <EntityTypeShape EntityType="LaminhCMSModel.CMS_Page" Width="1.5" PointX="6" PointY="3.125" />
         <AssociationConnector Association="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_Page" />
