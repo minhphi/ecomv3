@@ -29,9 +29,6 @@ namespace Laminh.CMS.WinForm
         {
             var actionservice = new ServiceReference1.ActionServiceClient();
             textBox1.Text = actionservice.GetProductXml("1");
-            Product p  = new Product();
-            p.Name = "product 1";
-            actionservice.InsertProduct(p);
         }
 
         private void button3_Click(object sender, EventArgs e)
