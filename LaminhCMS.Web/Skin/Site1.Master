@@ -1,0 +1,104 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.Master.cs" Inherits="LaminhCMS.Web.Skin.Site" %>
+
+<%@ Register Src="sub1col1.ascx" TagName="sub1col1" TagPrefix="uc1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <form runat="server" id="ajaxform" enctype="multipart/form-data">
+        <div id="Container">
+            <!-- Begin Header -->
+            <div id="Header">
+                <div id="logo">
+                    <asp:PlaceHolder ID="logoPanel" runat="server"></asp:PlaceHolder>
+                </div>
+                <div id="head_right">
+                    <div id="headtool">
+                        <div class="lang_html">
+                            <asp:PlaceHolder ID="LangPanel" runat="server"></asp:PlaceHolder>
+                        </div>
+                    </div>
+                    <div id="mainMenu">
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!-- End Header -->
+            <!--BEGIN MAIN-->
+            <div id="Main">
+                <div id="topcontent">
+                    <asp:PlaceHolder ID="topcontentPanel" runat="server"></asp:PlaceHolder>
+                </div>
+                <div id="Content">
+                    <div class="col_contentLeft">
+                        <asp:PlaceHolder ID="contentLeftpanel" runat="server"></asp:PlaceHolder>
+                    </div>
+                </div>
+                <div id="bottomcontent">
+                    <asp:PlaceHolder ID="bottomcontentPanel" runat="server"></asp:PlaceHolder>
+                </div>
+            </div>
+            <!--END MAIN-->
+        </div>
+        <!-- END CONTAINER-->
+        <!-- Begin Footer-->
+        <div id="Footer">
+            <div id="wrapFooter">
+                <div id="FooterLeftPanel">
+                    <asp:PlaceHolder ID="CopyLeftPanel" runat="server"></asp:PlaceHolder>
+                </div>
+                <div id="FooterRightPanel">
+                    <asp:PlaceHolder ID="CopyRightPanel" runat="server"></asp:PlaceHolder>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+    <!-- Begin Link google quang cao -->
+    <!-- Google Code for Remarketing tag -->
+    <!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 1040325333;
+        var google_conversion_label = "3iIDCM-JwwQQ1bWI8AM";
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+			<div style="display:inline;">
+			<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1040325333/?value=0&amp;label=3iIDCM-JwwQQ1bWI8AM&amp;guid=ON&amp;script=0"/>
+			</div>
+			</noscript>
+    <!-- End Link google quang cao -->
+
+    <!--Begin Remarketing Fb-->
+    <script type="text/javascript">
+        adroll_adv_id = "GHUGNG3SGVGZ3LLMA2JXS7";
+        adroll_pix_id = "OA263NWVSFFCVFEAT7EXNB";
+        (function () {
+            var oldonload = window.onload;
+            window.onload = function () {
+                __adroll_loaded = true;
+                var scr = document.createElement("script");
+                var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+                scr.setAttribute('async', 'true');
+                scr.type = "text/javascript";
+                scr.src = host + "/j/roundtrip.js";
+                ((document.getElementsByTagName('head') || [null])[0] ||
+                 document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+                if (oldonload) { oldonload() }
+            };
+        }());
+    </script>
+    <!--End Remarketing Fb-->
+
+</body>
+</html>

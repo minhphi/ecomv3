@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LaminhCMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LaminhCMSModelStoreContainer">
+          <EntitySet Name="CMS_Page" EntityType="LaminhCMSModel.Store.CMS_Page" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CMS_Page_UserControl" EntityType="LaminhCMSModel.Store.CMS_Page_UserControl" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CMS_UserControl" EntityType="LaminhCMSModel.Store.CMS_UserControl" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Invoice" EntityType="LaminhCMSModel.Store.Invoice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InvoiceProduct" EntityType="LaminhCMSModel.Store.InvoiceProduct" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Product" EntityType="LaminhCMSModel.Store.Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="LaminhCMSModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CMS_Page_UserControl_CMS_Page" Association="LaminhCMSModel.Store.FK_CMS_Page_UserControl_CMS_Page">
+            <End Role="CMS_Page" EntitySet="CMS_Page" />
+            <End Role="CMS_Page_UserControl" EntitySet="CMS_Page_UserControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CMS_Page_UserControl_CMS_UserControl" Association="LaminhCMSModel.Store.FK_CMS_Page_UserControl_CMS_UserControl">
+            <End Role="CMS_UserControl" EntitySet="CMS_UserControl" />
+            <End Role="CMS_Page_UserControl" EntitySet="CMS_Page_UserControl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceProduct_Invoice" Association="LaminhCMSModel.Store.FK_InvoiceProduct_Invoice">
+            <End Role="Invoice" EntitySet="Invoice" />
+            <End Role="InvoiceProduct" EntitySet="InvoiceProduct" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceProduct_Product" Association="LaminhCMSModel.Store.FK_InvoiceProduct_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="InvoiceProduct" EntitySet="InvoiceProduct" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CMS_Page">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Name="PageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PageTitle" Type="nvarchar" />
+          <Property Name="PageMetadata" Type="ntext" />
+          <Property Name="PageDescribe" Type="ntext" />
+          <Property Name="CacheTime" Type="int" />
+          <Property Name="MasterFileSource" Type="nvarchar" />
+          <Property Name="PageLanguage" Type="nvarchar" MaxLength="50" />
+          <Property Name="Visible" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="500" />
+          <Property Name="PageParentId" Type="nvarchar" />
+          <Property Name="PageView" Type="int" />
+          <Property Name="IsDelete" Type="bit" />
+        </EntityType>
+        <EntityType Name="CMS_Page_UserControl">
+          <Key>
+            <PropertyRef Name="Page_UserControl_Id" />
+          </Key>
+          <Property Name="Page_UserControl_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PageId" Type="int" />
+          <Property Name="UserControl_Id" Type="int" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Create_By" Type="nvarchar" MaxLength="500" />
+          <Property Name="Is_Delete" Type="bit" />
+        </EntityType>
+        <EntityType Name="CMS_UserControl">
+          <Key>
+            <PropertyRef Name="UserControl_Id" />
+          </Key>
+          <Property Name="UserControl_Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserControl_Name" Type="nvarchar" />
+          <Property Name="UserControl_Source" Type="nvarchar" />
+          <Property Name="Create_Date" Type="datetime" />
+          <Property Name="Create_By" Type="nvarchar" MaxLength="500" />
+          <Property Name="Visible" Type="bit" />
+          <Property Name="Is_Delete" Type="bit" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="nvarchar" />
+          <Property Name="EmployeName" Type="nvarchar" />
+          <Property Name="Phone" Type="nvarchar" />
+          <Property Name="Total" Type="float" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="InvoiceProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="InvoiceId" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" />
+          <Property Name="ShortDesc" Type="nvarchar" />
+          <Property Name="Image" Type="nvarchar" />
+          <Property Name="Price" Type="float" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_CMS_Page_UserControl_CMS_Page">
+          <End Role="CMS_Page" Type="LaminhCMSModel.Store.CMS_Page" Multiplicity="0..1" />
+          <End Role="CMS_Page_UserControl" Type="LaminhCMSModel.Store.CMS_Page_UserControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CMS_Page">
+              <PropertyRef Name="PageId" />
+            </Principal>
+            <Dependent Role="CMS_Page_UserControl">
+              <PropertyRef Name="PageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CMS_Page_UserControl_CMS_UserControl">
+          <End Role="CMS_UserControl" Type="LaminhCMSModel.Store.CMS_UserControl" Multiplicity="0..1" />
+          <End Role="CMS_Page_UserControl" Type="LaminhCMSModel.Store.CMS_Page_UserControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CMS_UserControl">
+              <PropertyRef Name="UserControl_Id" />
+            </Principal>
+            <Dependent Role="CMS_Page_UserControl">
+              <PropertyRef Name="UserControl_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceProduct_Invoice">
+          <End Role="Invoice" Type="LaminhCMSModel.Store.Invoice" Multiplicity="0..1" />
+          <End Role="InvoiceProduct" Type="LaminhCMSModel.Store.InvoiceProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvoiceProduct">
+              <PropertyRef Name="InvoiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceProduct_Product">
+          <End Role="Product" Type="LaminhCMSModel.Store.Product" Multiplicity="0..1" />
+          <End Role="InvoiceProduct" Type="LaminhCMSModel.Store.InvoiceProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvoiceProduct">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LaminhCMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LaminhCMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CMS_Page_UserControl" EntityType="LaminhCMSModel.CMS_Page_UserControl" />
+          <EntitySet Name="CMS_UserControl" EntityType="LaminhCMSModel.CMS_UserControl" />
+          <EntitySet Name="sysdiagrams" EntityType="LaminhCMSModel.sysdiagram" />
+          <AssociationSet Name="FK_CMS_Page_UserControl_CMS_UserControl" Association="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_UserControl">
+            <End Role="CMS_UserControl" EntitySet="CMS_UserControl" />
+            <End Role="CMS_Page_UserControl" EntitySet="CMS_Page_UserControl" />
+          </AssociationSet>
+          <EntitySet Name="CMS_Page" EntityType="LaminhCMSModel.CMS_Page" />
+          <AssociationSet Name="FK_CMS_Page_UserControl_CMS_Page" Association="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_Page">
+            <End Role="CMS_Page" EntitySet="CMS_Page" />
+            <End Role="CMS_Page_UserControl" EntitySet="CMS_Page_UserControl" />
+          </AssociationSet>
+          <EntitySet Name="Invoices" EntityType="LaminhCMSModel.Invoice" />
+          <EntitySet Name="InvoiceProducts" EntityType="LaminhCMSModel.InvoiceProduct" />
+          <EntitySet Name="Products" EntityType="LaminhCMSModel.Product" />
+          <AssociationSet Name="FK_InvoiceProduct_Invoice" Association="LaminhCMSModel.FK_InvoiceProduct_Invoice">
+            <End Role="Invoice" EntitySet="Invoices" />
+            <End Role="InvoiceProduct" EntitySet="InvoiceProducts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InvoiceProduct_Product" Association="LaminhCMSModel.FK_InvoiceProduct_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="InvoiceProduct" EntitySet="InvoiceProducts" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CMS_Page_UserControl">
+          <Key>
+            <PropertyRef Name="Page_UserControl_Id" />
+          </Key>
+          <Property Name="Page_UserControl_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageId" Type="Int32" />
+          <Property Name="UserControl_Id" Type="Int32" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Create_By" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Delete" Type="Boolean" />
+          <NavigationProperty Name="CMS_UserControl" Relationship="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_UserControl" FromRole="CMS_Page_UserControl" ToRole="CMS_UserControl" />
+          <NavigationProperty Name="CMS_Page" Relationship="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_Page" FromRole="CMS_Page_UserControl" ToRole="CMS_Page" />
+        </EntityType>
+        <EntityType Name="CMS_UserControl">
+          <Key>
+            <PropertyRef Name="UserControl_Id" />
+          </Key>
+          <Property Name="UserControl_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserControl_Name" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="UserControl_Source" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+          <Property Name="Create_By" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Visible" Type="Boolean" />
+          <Property Name="Is_Delete" Type="Boolean" />
+          <NavigationProperty Name="CMS_Page_UserControl" Relationship="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_UserControl" FromRole="CMS_UserControl" ToRole="CMS_Page_UserControl" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_CMS_Page_UserControl_CMS_UserControl">
+          <End Role="CMS_UserControl" Type="LaminhCMSModel.CMS_UserControl" Multiplicity="0..1" />
+          <End Role="CMS_Page_UserControl" Type="LaminhCMSModel.CMS_Page_UserControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CMS_UserControl">
+              <PropertyRef Name="UserControl_Id" />
+            </Principal>
+            <Dependent Role="CMS_Page_UserControl">
+              <PropertyRef Name="UserControl_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CMS_Page">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Type="Int32" Name="PageId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PageTitle" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PageMetadata" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PageDescribe" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CacheTime" />
+          <Property Type="String" Name="MasterFileSource" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PageLanguage" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Visible" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="String" Name="CreateBy" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PageParentId" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PageView" />
+          <Property Type="Boolean" Name="IsDelete" />
+          <NavigationProperty Name="CMS_Page_UserControl" Relationship="LaminhCMSModel.FK_CMS_Page_UserControl_CMS_Page" FromRole="CMS_Page" ToRole="CMS_Page_UserControl" />
+        </EntityType>
+        <Association Name="FK_CMS_Page_UserControl_CMS_Page">
+          <End Type="LaminhCMSModel.CMS_Page" Role="CMS_Page" Multiplicity="0..1" />
+          <End Type="LaminhCMSModel.CMS_Page_UserControl" Role="CMS_Page_UserControl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CMS_Page">
+              <PropertyRef Name="PageId" />
+            </Principal>
+            <Dependent Role="CMS_Page_UserControl">
+              <PropertyRef Name="PageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CustomerName" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EmployeName" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Total" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <NavigationProperty Name="InvoiceProducts" Relationship="LaminhCMSModel.FK_InvoiceProduct_Invoice" FromRole="Invoice" ToRole="InvoiceProduct" />
+        </EntityType>
+        <EntityType Name="InvoiceProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ProductId" />
+          <Property Type="Int32" Name="InvoiceId" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <NavigationProperty Name="Invoice" Relationship="LaminhCMSModel.FK_InvoiceProduct_Invoice" FromRole="InvoiceProduct" ToRole="Invoice" />
+          <NavigationProperty Name="Product" Relationship="LaminhCMSModel.FK_InvoiceProduct_Product" FromRole="InvoiceProduct" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShortDesc" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Image" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Price" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <NavigationProperty Name="InvoiceProducts" Relationship="LaminhCMSModel.FK_InvoiceProduct_Product" FromRole="Product" ToRole="InvoiceProduct" />
+        </EntityType>
+        <Association Name="FK_InvoiceProduct_Invoice">
+          <End Type="LaminhCMSModel.Invoice" Role="Invoice" Multiplicity="0..1" />
+          <End Type="LaminhCMSModel.InvoiceProduct" Role="InvoiceProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvoiceProduct">
+              <PropertyRef Name="InvoiceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InvoiceProduct_Product">
+          <End Type="LaminhCMSModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="LaminhCMSModel.InvoiceProduct" Role="InvoiceProduct" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="InvoiceProduct">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LaminhCMSModelStoreContainer" CdmEntityContainer="LaminhCMSEntities">
+          <EntitySetMapping Name="CMS_Page_UserControl">
+            <EntityTypeMapping TypeName="LaminhCMSModel.CMS_Page_UserControl">
+              <MappingFragment StoreEntitySet="CMS_Page_UserControl">
+                <ScalarProperty Name="Page_UserControl_Id" ColumnName="Page_UserControl_Id" />
+                <ScalarProperty Name="PageId" ColumnName="PageId" />
+                <ScalarProperty Name="UserControl_Id" ColumnName="UserControl_Id" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+                <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMS_UserControl">
+            <EntityTypeMapping TypeName="LaminhCMSModel.CMS_UserControl">
+              <MappingFragment StoreEntitySet="CMS_UserControl">
+                <ScalarProperty Name="UserControl_Id" ColumnName="UserControl_Id" />
+                <ScalarProperty Name="UserControl_Name" ColumnName="UserControl_Name" />
+                <ScalarProperty Name="UserControl_Source" ColumnName="UserControl_Source" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+                <ScalarProperty Name="Create_By" ColumnName="Create_By" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Is_Delete" ColumnName="Is_Delete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LaminhCMSModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMS_Page">
+            <EntityTypeMapping TypeName="LaminhCMSModel.CMS_Page">
+              <MappingFragment StoreEntitySet="CMS_Page">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="PageView" ColumnName="PageView" />
+                <ScalarProperty Name="PageParentId" ColumnName="PageParentId" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="PageLanguage" ColumnName="PageLanguage" />
+                <ScalarProperty Name="MasterFileSource" ColumnName="MasterFileSource" />
+                <ScalarProperty Name="CacheTime" ColumnName="CacheTime" />
+                <ScalarProperty Name="PageDescribe" ColumnName="PageDescribe" />
+                <ScalarProperty Name="PageMetadata" ColumnName="PageMetadata" />
+                <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+                <ScalarProperty Name="PageId" ColumnName="PageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="LaminhCMSModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="EmployeName" ColumnName="EmployeName" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceProducts">
+            <EntityTypeMapping TypeName="LaminhCMSModel.InvoiceProduct">
+              <MappingFragment StoreEntitySet="InvoiceProduct">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="LaminhCMSModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

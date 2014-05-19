@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33639EE2-BDDD-4F69-8533-B5FA02A57E40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataObjects</RootNamespace>
+    <AssemblyName>DataObjects</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DaoFactories.cs" />
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="EntityFramework\DataObjectFactory.cs" />
+    <Compile Include="EntityFramework\Implement\EntityDaoBase.cs" />
+    <Compile Include="EntityFramework\Implement\EntityDaoFactory.cs" />
+    <Compile Include="EntityFramework\Implement\EntityPageDao.cs" />
+    <Compile Include="EntityFramework\Implement\EntityProductDao.cs" />
+    <Compile Include="EntityFramework\Model\CMSDatacontext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMSDatacontext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Model\CMSDatacontext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMSDatacontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Model\CMSDatacontext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CMSDatacontext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Model\CMS_Page.cs">
+      <DependentUpon>CMSDatacontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Model\CMS_Page_UserControl.cs">
+      <DependentUpon>CMSDatacontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Model\CMS_UserControl.cs">
+      <DependentUpon>CMSDatacontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Model\Invoice.cs">
+      <DependentUpon>CMSDatacontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Model\InvoiceProduct.cs">
+      <DependentUpon>CMSDatacontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Model\Mapper.cs" />
+    <Compile Include="EntityFramework\Model\Product.cs">
+      <DependentUpon>CMSDatacontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Model\sysdiagram.cs">
+      <DependentUpon>CMSDatacontext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IDao.cs" />
+    <Compile Include="IDaoFactory.cs" />
+    <Compile Include="IPageDao.cs" />
+    <Compile Include="IProductDao.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EntityFramework\Model\CMSDatacontext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CMSDatacontext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="EntityFramework\Model\CMSDatacontext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CMSDatacontext.edmx</DependentUpon>
+      <LastGenOutput>CMSDatacontext.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EntityFramework\Model\CMSDatacontext.edmx.diagram">
+      <DependentUpon>CMSDatacontext.edmx</DependentUpon>
+    </None>
+    <None Include="EntityFramework\Model\CMSDatacontext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CMSDatacontext.edmx</DependentUpon>
+      <LastGenOutput>CMSDatacontext.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObject\BusinessObject.csproj">
+      <Project>{7290BFFF-3A5D-4D47-9AE8-7318AE897D2F}</Project>
+      <Name>BusinessObject</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
